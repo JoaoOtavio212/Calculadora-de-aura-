@@ -1,1 +1,115 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Calculator 💀</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">💀 AURA CALCULATOR</div>
+        <nav>
+            <a href="#calculadora">Calculadora</a>
+            <a href="#aura-dia">Aura do dia</a>
+            <a href="#classificacoes">Classificações</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="meme-decoration">67 🗿</div>
+            <h1>QUANTA AURA<br>VOCÊ TEM?</h1>
+            <p>Descubra se você é um Beta ou um verdadeiro Lobo Alfa.</p>
+            <a href="#calculadora" class="main-button">CALCULAR MINHA AURA</a>
+        </section>
+
+        <section id="calculadora" class="section">
+            <div class="section-title">
+                <span>💀</span>
+                <h2>Calculadora de Aura</h2>
+                <p>Marque o que aconteceu com você e escolha a quantidade.</p>
+            </div>
+
+            <div id="situacoes" class="situacoes-grid"></div>
+
+            <div class="resultado">
+                <p>SUA AURA TOTAL</p>
+                <h2 id="totalAura">0</h2>
+                <div id="classificacao" class="classificacao">
+                    🤡 BETA
+                </div>
+                <p id="mensagemResultado">Sua jornada de aura está começando!</p>
+                <button id="calcularBtn" class="main-button">CALCULAR MINHA AURA</button>
+                <button id="limparBtn" class="reset-button">LIMPAR TUDO</button>
+            </div>
+        </section>
+
+        <section id="aura-dia" class="section aura-section">
+            <div class="section-title">
+                <span>🎰</span>
+                <h2>Aura do Dia</h2>
+                <p>Descubra o que o destino reservou para você hoje!</p>
+            </div>
+
+            <div class="roleta-box">
+                <div class="roleta-emoji" id="roletaEmoji">🎲</div>
+                <h2 id="roletaResultado">??? AURA</h2>
+                <p id="roletaMensagem">Clique no botão e descubra sua sorte!</p>
+                <button id="girarBtn" class="main-button">
+                    GIRAR MINHA AURA
+                </button>
+            </div>
+        </section>
+
+        <section id="classificacoes" class="section">
+            <div class="section-title">
+                <span>🏆</span>
+                <h2>Classificações</h2>
+                <p>Em qual nível você está?</p>
+            </div>
+
+            <div class="classificacoes-grid">
+                <div class="rank beta">
+                    <span>🤡</span>
+                    <h3>BETA</h3>
+                    <p>0 a 500 aura</p>
+                </div>
+
+                <div class="rank betinha">
+                    <span>🥶</span>
+                    <h3>BETINHA</h3>
+                    <p>501 a 2.000 aura</p>
+                </div>
+
+                <div class="rank sigma">
+                    <span>😎</span>
+                    <h3>SIGMA</h3>
+                    <p>2.001 a 5.000 aura</p>
+                </div>
+
+                <div class="rank sigma-boy">
+                    <span>🗿</span>
+                    <h3>SIGMA BOY</h3>
+                    <p>5.001 a 10.000 aura</p>
+                </div>
+
+                <div class="rank lobo">
+                    <span>🐺</span>
+                    <h3>LOBO ALFA</h3>
+                    <p>Mais de 10.000 aura</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>💀 AURA CALCULATOR — Sua aura, suas regras.</p>
+        <p>Projeto escolar de Computação</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

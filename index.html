@@ -2,114 +2,126 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura Calculator 💀</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0a13">
+  <title>Aura Lab — Calculadora de Aura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
 
-    <header class="header">
-        <div class="logo">💀 AURA CALCULATOR</div>
-        <nav>
-            <a href="#calculadora">Calculadora</a>
-            <a href="#aura-dia">Aura do dia</a>
-            <a href="#classificacoes">Classificações</a>
-        </nav>
-    </header>
+  <header class="topbar">
+    <a class="brand" href="#inicio"><span class="brand-icon">✦</span><span>AURA<span class="brand-soft">LAB</span></span></a>
+    <nav>
+      <a href="#calculadora">Calculadora</a>
+      <a href="#aura-dia">Aura do dia</a>
+      <a href="#ranks">Ranks</a>
+    </nav>
+    <a class="top-cta" href="#calculadora">Testar minha aura <span>↗</span></a>
+  </header>
 
-    <main>
-        <section class="hero">
-            <div class="meme-decoration">67 🗿</div>
-            <h1>QUANTA AURA<br>VOCÊ TEM?</h1>
-            <p>Descubra se você é um Beta ou um verdadeiro Lobo Alfa.</p>
-            <a href="#calculadora" class="main-button">CALCULAR MINHA AURA</a>
-        </section>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> SISTEMA DE AURA 2.0</div>
+        <h1>Sua aura.<br><span>Suas regras.</span></h1>
+        <p>As escolhas, os momentos lendários e os pequenos micos do dia a dia: tudo isso conta na sua pontuação.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#calculadora">Calcular minha aura <span>→</span></a>
+          <a class="text-link" href="#ranks">Ver classificações</a>
+        </div>
+        <div class="hero-note"><span>✦</span> Mais atitude, mais aura. Sem levar a vida tão a sério.</div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-emblem">✦</div>
+        <div class="floating-tag tag-top"><span>⚡</span> +1.000 AURA</div>
+        <div class="floating-tag tag-bottom"><span>🐺</span> LOBO ALFA</div>
+        <div class="hero-stat"><small>AURA POTENCIAL</small><strong>∞</strong><span>O limite é seu</span></div>
+      </div>
+    </section>
 
-        <section id="calculadora" class="section">
-            <div class="section-title">
-                <span>💀</span>
-                <h2>Calculadora de Aura</h2>
-                <p>Marque o que aconteceu com você e escolha a quantidade.</p>
-            </div>
+    <section class="section" id="calculadora">
+      <div class="section-heading">
+        <div><div class="eyebrow">01 / CALCULADORA</div><h2>Como foi seu dia?</h2><p>Selecione as situações que aconteceram e ajuste quantas vezes quiser.</p></div>
+        <div class="selection-count"><strong id="selectedCount">0</strong><span>situações<br>selecionadas</span></div>
+      </div>
 
-            <div id="situacoes" class="situacoes-grid"></div>
+      <div class="filter-bar">
+        <div class="filters">
+          <button class="filter active" data-filter="todas">Todas</button>
+          <button class="filter" data-filter="positivas"><span class="filter-plus">+</span> Ganhei aura</button>
+          <button class="filter" data-filter="negativas"><span class="filter-minus">−</span> Perdi aura</button>
+        </div>
+        <span class="hint">Dica: os bônus positivos são mais generosos ✦</span>
+      </div>
 
-            <div class="resultado">
-                <p>SUA AURA TOTAL</p>
-                <h2 id="totalAura">0</h2>
-                <div id="classificacao" class="classificacao">
-                    🤡 BETA
-                </div>
-                <p id="mensagemResultado">Sua jornada de aura está começando!</p>
-                <button id="calcularBtn" class="main-button">CALCULAR MINHA AURA</button>
-                <button id="limparBtn" class="reset-button">LIMPAR TUDO</button>
-            </div>
-        </section>
+      <div id="situacoes" class="situations-grid"></div>
 
-        <section id="aura-dia" class="section aura-section">
-            <div class="section-title">
-                <span>🎰</span>
-                <h2>Aura do Dia</h2>
-                <p>Descubra o que o destino reservou para você hoje!</p>
-            </div>
+      <section class="result-panel">
+        <div class="result-main">
+          <div class="eyebrow">SEU RESULTADO</div>
+          <div class="result-number"><span id="totalAura">0</span><small>AURA</small></div>
+          <div class="rank-pill" id="classificacao">🤡 BETA</div>
+          <p id="mensagemResultado">Toda lenda começa em algum lugar. Bora construir essa aura!</p>
+        </div>
+        <div class="result-side">
+          <div class="progress-label"><span>Progresso para o próximo rank</span><strong id="progressText">0%</strong></div>
+          <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+          <p id="nextRank">Próximo nível: BETINHA</p>
+          <div class="result-actions">
+            <button id="calcularBtn" class="button button-primary">Atualizar resultado ↗</button>
+            <button id="limparBtn" class="button button-ghost">Limpar seleção</button>
+          </div>
+        </div>
+      </section>
+    </section>
 
-            <div class="roleta-box">
-                <div class="roleta-emoji" id="roletaEmoji">🎲</div>
-                <h2 id="roletaResultado">??? AURA</h2>
-                <p id="roletaMensagem">Clique no botão e descubra sua sorte!</p>
-                <button id="girarBtn" class="main-button">
-                    GIRAR MINHA AURA
-                </button>
-            </div>
-        </section>
+    <section class="daily-section" id="aura-dia">
+      <div class="daily-inner">
+        <div class="daily-copy">
+          <div class="eyebrow">02 / DESTINO DO DIA</div>
+          <h2>A sorte está<br><span>do seu lado?</span></h2>
+          <p>Uma rodada por vez. Descubra seu bônus diário e veja quantos pontos o universo mandou pra sua conta.</p>
+          <div class="daily-footnote">✦ A roleta é só pela diversão. Os resultados são aleatórios.</div>
+        </div>
+        <div class="wheel-card" id="roletaBox">
+          <div class="wheel-ring"><div class="wheel-icon" id="roletaEmoji">🎲</div></div>
+          <div class="wheel-label">SEU DESTINO</div>
+          <h3 id="roletaResultado">??? AURA</h3>
+          <p id="roletaMensagem">Clique para descobrir sua sorte de hoje.</p>
+          <button id="girarBtn" class="button button-primary wheel-button">Sortear minha aura ✦</button>
+        </div>
+      </div>
+    </section>
 
-        <section id="classificacoes" class="section">
-            <div class="section-title">
-                <span>🏆</span>
-                <h2>Classificações</h2>
-                <p>Em qual nível você está?</p>
-            </div>
+    <section class="section ranks-section" id="ranks">
+      <div class="section-heading centered">
+        <div class="eyebrow">03 / HIERARQUIA</div>
+        <h2>Qual é o seu nível?</h2>
+        <p>Suba de categoria e entre para a elite da aura.</p>
+      </div>
+      <div class="ranks-grid">
+        <article class="rank-card"><div class="rank-icon">🤡</div><div class="rank-name">BETA</div><div class="rank-range">0 – 500 aura</div><p>O começo da jornada.</p></article>
+        <article class="rank-card"><div class="rank-icon">🥶</div><div class="rank-name">BETINHA</div><div class="rank-range">501 – 2.000 aura</div><p>Já está esquentando.</p></article>
+        <article class="rank-card"><div class="rank-icon">😎</div><div class="rank-name">SIGMA</div><div class="rank-range">2.001 – 5.000 aura</div><p>Respeito conquistado.</p></article>
+        <article class="rank-card"><div class="rank-icon">🗿</div><div class="rank-name">SIGMA BOY</div><div class="rank-range">5.001 – 10.000 aura</div><p>Presença de milhões.</p></article>
+        <article class="rank-card"><div class="rank-icon">🐺</div><div class="rank-name">LOBO ALFA</div><div class="rank-range">10.001+ aura</div><p>Uma verdadeira lenda.</p></article>
+      </div>
+    </section>
+  </main>
 
-            <div class="classificacoes-grid">
-                <div class="rank beta">
-                    <span>🤡</span>
-                    <h3>BETA</h3>
-                    <p>0 a 500 aura</p>
-                </div>
-
-                <div class="rank betinha">
-                    <span>🥶</span>
-                    <h3>BETINHA</h3>
-                    <p>501 a 2.000 aura</p>
-                </div>
-
-                <div class="rank sigma">
-                    <span>😎</span>
-                    <h3>SIGMA</h3>
-                    <p>2.001 a 5.000 aura</p>
-                </div>
-
-                <div class="rank sigma-boy">
-                    <span>🗿</span>
-                    <h3>SIGMA BOY</h3>
-                    <p>5.001 a 10.000 aura</p>
-                </div>
-
-                <div class="rank lobo">
-                    <span>🐺</span>
-                    <h3>LOBO ALFA</h3>
-                    <p>Mais de 10.000 aura</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>💀 AURA CALCULATOR — Sua aura, suas regras.</p>
-        <p>Projeto escolar de Computação</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <footer>
+    <a class="brand" href="#inicio"><span class="brand-icon">✦</span><span>AURA<span class="brand-soft">LAB</span></span></a>
+    <p>Feito para medir momentos lendários. Projeto escolar de Computação.</p>
+    <span class="footer-mark">STAY SIGMA ✦</span>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
